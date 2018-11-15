@@ -1,4 +1,4 @@
-# Clientside EXIF Data Extraction from images 
+# Clientside EXIF data extraction from images 
 
 ## Description
 This project contains a small javascript library used to extract EXIF data from images within the browser.
