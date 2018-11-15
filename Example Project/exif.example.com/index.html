@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>EXIF image extractor</title>
+        <meta name="description" content="EXIF image extractor">
+        <link rel="stylesheet" href="css/style.css?v=1.0">
+        <script src="js/lib/EXIFImage.js?v=1.0"></script>
+        <script src="js/script.js?v=1.0"></script>
+    </head>
+
+    <body>
+
+
+        <div id="file_select_button" onclick="document.getElementById('file_select').click();">
+            Please choose a file
+            <input id="file_select" type="file" style="position:absolute;opacity:0;width: 100%;height: 100%" title="Please choose a file" style="font-color:#ffffff;" onchange="Application.onFileSelected(this);">
+        </div>
+
+        <br/>
+
+        <div id="geo_coord_holder"></div>
+        <img id="thumbnail_holder" />
+        <div id="exif_holder"></div>
+    </body>
+
+
+</html>
