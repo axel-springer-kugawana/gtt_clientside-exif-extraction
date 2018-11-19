@@ -8,7 +8,7 @@ This library is a simplified wrapper for easly using the open source library ava
 
 
 ## Description
-This project contains a small javascript library used to extract EXIF data from images within the browser.
+This project contains a small javascript library (EXIFImage.js) used to extract EXIF data from images within the browser.
 This is mainly used for extracting the geo location from an image if available.
 This data can then be uploaded with the image as separate parameters to be stored separatly and associated with the image.
 
