@@ -1,12 +1,18 @@
-Welcome to Clientside EXIF Extraction's documentation!
+EXIFImage.js
 ======================================================
+
+Welcome the the EXIFImage.js Javascript Library Documentation
+
+
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Table of Content:
 
-   license
-   help
+   Examples
+   License
+   Notes
+
 
 
 
