@@ -6,6 +6,8 @@ This library is a simplified wrapper for easly using the open source library ava
 
 **Note**: The EXIF standard applies only to `.jpg` and `.tiff` images. EXIF logic in this package is based on the EXIF standard v2.2 ([JEITA CP-3451, included in this repo](/spec/Exif2-2.pdf)).
 
+## Documentation
+Documentation for this project can be found in its Github wiki @ https://github.com/axel-springer-kugawana/gtt_clientside-exif-extraction/wiki
 
 ## Description
 This project contains a small javascript library (EXIFImage.js) used to extract EXIF data from images within the browser.
