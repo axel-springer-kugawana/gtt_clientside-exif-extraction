@@ -17,8 +17,9 @@
 
 //////////
 /// Exif.js
-// A JavaScript library for reading EXIF meta data from image files.
+// A JavaScript library for reading EXIF image metadata
 // Available from Github @ https://github.com/exif-js/exif-js
+// Available under the MIT License
 /////////
 
 (function() {
