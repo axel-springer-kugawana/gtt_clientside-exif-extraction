@@ -23,6 +23,9 @@ In addition there is a sample image containing EXIF data called exif-example.jpg
 
 ## Code Example ##
 
+**Note**:
+In case you dont have a image with exif data there is one available with the project for testing called: exif-example.jpg
+
 ### HTML ###
 
 ``` HTML
