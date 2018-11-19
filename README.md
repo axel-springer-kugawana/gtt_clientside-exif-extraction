@@ -213,11 +213,11 @@ Application = {
     },
 
     // This method will return an image object containing the thumbnail associated with the image
-    getThumbnailCallback: function(imageURL){
-        if(imageURL != null) {
+    getThumbnailCallback: function(image){
+        if(image != null) {
             var thumbnailHolder = document.getElementById("thumbnail_holder");
             thumbnailHolder.style.display = "block";
-            thumbnailHolder.src = imageURL;
+            thumbnailHolder.src = image;
         }
     }
 
