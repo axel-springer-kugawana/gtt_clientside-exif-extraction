@@ -15,9 +15,16 @@ Application = {
         if (files.length > 0) {
             var file = files[0];
 
+            // Initializing a new EXIFImage for the image file selected by the user
             var img = new EXIFImage(file);
+
+            // Calling getThumbnail on the img object and passing a callback for the response.
             img.getThumbnail(this.getThumbnailCallback);
+
+            // Calling getEXIFData on the img object and passing a callback for the response.
             img.getEXIFData(this.getExifDataCallback);
+
+            // Calling getGeoCoordinates on the img object and passing a callback for the response.
             img.getGeoCoordinates(this.getGeoCoordinatesCallback);
         }
     },
@@ -31,6 +38,7 @@ Application = {
 
     // Callback Methods
 
+    // This methods will return an object (JSON structure) with values for latitude and longitude or null if values are not available
     getGeoCoordinatesCallback: function(data){
         if(data != null) {
             var encodedData = JSON.stringify(data);
@@ -40,6 +48,7 @@ Application = {
         }
     },
 
+    // This method will return an object (JSON structure) with all available exif parameters or null on error or if none are available
     getExifDataCallback: function(data){
         if(data != null) {
             var encodedData = JSON.stringify(data);
@@ -49,6 +58,7 @@ Application = {
         }
     },
 
+    // This method will return an image object containing the thumbnail associated with the image
     getThumbnailCallback: function(imageURL){
         if(imageURL != null) {
             var thumbnailHolder = document.getElementById("thumbnail_holder");

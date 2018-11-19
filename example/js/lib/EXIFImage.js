@@ -1093,6 +1093,7 @@ function EXIFImage(file){
         EXIF.getData(this.imageFile, function() {
             var encodedOutput = null;
             var output = this.exifdata;
+            if(JSON.stringify(output) === JSON.stringify({}))output = null;
             callback(output);
         });
     },

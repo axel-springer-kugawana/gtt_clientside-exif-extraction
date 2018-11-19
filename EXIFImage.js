@@ -1087,65 +1087,66 @@ function EXIFImage(file){
 
     version: 1.0,
 
-    this.imageFile = file;
+        this.imageFile = file;
 
     this.getEXIFData = function(callback){
         EXIF.getData(this.imageFile, function() {
             var encodedOutput = null;
             var output = this.exifdata;
+            if(JSON.stringify(output) === JSON.stringify({}))output = null;
             callback(output);
         });
     },
 
-    this.getGeoCoordinates = function(callback){
-        parent = this;
-        EXIF.getData(this.imageFile, function() {
-            var encodedOutput = null;
-            var output = this.exifdata;
-            var lat = this.exifdata.GPSLatitude;
-            var lon = this.exifdata.GPSLongitude;
-            var latLon = null;
-            if(lat != undefined && lat != null && lat.length > 0 && lon != undefined && lon != null && lon.length > 0) {
-                latLon = {"latitude": parent.toDecimal(lat), "longitude": parent.toDecimal(lon)};
-                callback(latLon);
-            }else{
-                callback(null);
-            }
-        });
-    },
-
-    this.getThumbnail = function (callback) {
-        if (FileReader && this.imageFile.type === "image/jpeg") {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                var array = new Uint8Array(e.target.result), start, end;
-                for (var i = 2; i < array.length; i++) {
-                    if (array[i] === 0xFF) {
-                        if (!start) {
-                            if (array[i + 1] === 0xD8) {
-                                start = i;
-                            }
-                        } else {
-                            if (array[i + 1] === 0xD9) {
-                                end = i;
-                                break;
-                            }
-                        }
-                    }
-                }
-                if (start && end) {
-                    var urlCreator = window.URL || window.webkitURL;
-                    var imageUrl = urlCreator.createObjectURL(new Blob([array.subarray(start, end)], {type:"image/jpeg"}));
-                    callback(imageUrl);
+        this.getGeoCoordinates = function(callback){
+            parent = this;
+            EXIF.getData(this.imageFile, function() {
+                var encodedOutput = null;
+                var output = this.exifdata;
+                var lat = this.exifdata.GPSLatitude;
+                var lon = this.exifdata.GPSLongitude;
+                var latLon = null;
+                if(lat != undefined && lat != null && lat.length > 0 && lon != undefined && lon != null && lon.length > 0) {
+                    latLon = {"latitude": parent.toDecimal(lat), "longitude": parent.toDecimal(lon)};
+                    callback(latLon);
                 }else{
                     callback(null);
                 }
-            }.bind(this);
-            reader.readAsArrayBuffer(this.imageFile.slice(0, 50000));
-        }else{
-            callback(null);
-        }
-    };
+            });
+        },
+
+        this.getThumbnail = function (callback) {
+            if (FileReader && this.imageFile.type === "image/jpeg") {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    var array = new Uint8Array(e.target.result), start, end;
+                    for (var i = 2; i < array.length; i++) {
+                        if (array[i] === 0xFF) {
+                            if (!start) {
+                                if (array[i + 1] === 0xD8) {
+                                    start = i;
+                                }
+                            } else {
+                                if (array[i + 1] === 0xD9) {
+                                    end = i;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (start && end) {
+                        var urlCreator = window.URL || window.webkitURL;
+                        var imageUrl = urlCreator.createObjectURL(new Blob([array.subarray(start, end)], {type:"image/jpeg"}));
+                        callback(imageUrl);
+                    }else{
+                        callback(null);
+                    }
+                }.bind(this);
+                reader.readAsArrayBuffer(this.imageFile.slice(0, 50000));
+            }else{
+                callback(null);
+            }
+        };
 
     // Helper function, not for direct use
     this.toDecimal = function(number){
