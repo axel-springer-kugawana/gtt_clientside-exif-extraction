@@ -1,3 +1,10 @@
+// ******************************************************************************************************
+// Description: Example code for using EXIFImage.js for extracting basic EXIF data from jpg/tiff images
+// Creation date: 19/11/2018
+// Version: 1.0
+// Written by Gur Zeevi
+// ******************************************************************************************************
+
 Application = {
 
     onFileSelected: function (fileInput) {

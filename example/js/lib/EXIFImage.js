@@ -2,10 +2,11 @@
 // EXIFImage.js
 //
 // A wrapper class to simplify use of Exif.js to read exif data from image files, spesifically geo coordinagtes of an image
+// Creation date: 15/11/2018
 // Written by Gur Zeevi
-// 15/11/2018
 //
 // Basic usage:
+// ============
 // Create an EXIF image from a image object: var img = new EXIFImage(file);
 //
 // Available methods:
@@ -19,7 +20,7 @@
 /// Exif.js
 // A JavaScript library for reading EXIF image metadata
 // Available from Github @ https://github.com/exif-js/exif-js
-// Available under the MIT License
+// Available under the MIT License @ https://github.com/exif-js/exif-js/blob/master/LICENSE.md
 /////////
 
 (function() {
