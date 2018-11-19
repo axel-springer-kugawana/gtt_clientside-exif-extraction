@@ -24,6 +24,7 @@ In addition there is a sample image containing EXIF data called exif-example.jpg
 ## Code Example ##
 
 ``` HTML
+
 <!doctype html>
 <html lang="en">
     <head>
@@ -50,12 +51,159 @@ In addition there is a sample image containing EXIF data called exif-example.jpg
 
 
 </html>
+
 ```
 
 ``` CSS
 
+#file_select_button{
+    display: block;
+    position: relative;
+    margin: auto;
+    margin-left: 20px;
+    padding: 0 auto;
+
+    width: 200px;
+    height: 30px;
+
+    float: left;
+
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    color: #ffffff;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+
+    border-radius: 15px;
+    background-color: #000000;
+
+    cursor: pointer;
+}
+
+#file_select_button:hover{
+    background-color: #606060;
+}
+
+#file_select_button:active{
+    background-color: #000000;
+}
+
+#thumbnail_holder{
+    display: none;
+    position: absolute;
+    margin: 0 auto;
+    padding: 0px;
+
+    width: 300px;
+    height: auto;
+
+    top: 70px;
+    right: 20px;
+
+    overflow: hidden;
+}
+
+#geo_coord_holder{
+    display: block;
+    position: absolute;
+    margin: auto;
+    padding: 0 auto;
+
+    width: auto;
+    height: 30px;
+
+    top: 10px;
+    right: 20px;
+
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    color: #000000;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+}
+
+#exif_holder{
+    display: none;
+    position: absolute;
+    margin: auto;
+    padding: 10px;
+
+    width: calc(100% - 690px);
+    height: auto;
+
+    top: 70px;
+    left: 20px;
+
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    color: #000000;
+    line-height: 14px;
+    font-size: 12px;
+    text-align: left;
+    word-wrap: break-word;
+
+    border-radius: 15px;
+    background-color: #ffffff;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 ```
 
 ``` Javascript
+
+Application = {
+
+    onFileSelected: function (fileInput) {
+
+        this.clear();
+
+        var files = fileInput.files;
+        if (files.length > 0) {
+            var file = files[0];
+
+            var img = new EXIFImage(file);
+            img.getThumbnail(this.getThumbnailCallback);
+            img.getEXIFData(this.getExifDataCallback);
+            img.getGeoCoordinates(this.getGeoCoordinatesCallback);
+        }
+    },
+
+    clear: function(){
+        document.getElementById("thumbnail_holder").src = null;
+        document.getElementById("thumbnail_holder").style.display = "none";
+        document.getElementById("exif_holder").innerHTML = "";
+        document.getElementById("geo_coord_holder").innerHTML = "";
+    },
+
+    // Callback Methods
+
+    getGeoCoordinatesCallback: function(data){
+        if(data != null) {
+            var encodedData = JSON.stringify(data);
+            var geoCoordHolder = document.getElementById("geo_coord_holder");
+            geoCoordHolder.style.display = "block";
+            geoCoordHolder.innerHTML = encodedData;
+        }
+    },
+
+    getExifDataCallback: function(data){
+        if(data != null) {
+            var encodedData = JSON.stringify(data);
+            var exifHolder = document.getElementById("exif_holder");
+            exifHolder.style.display = "block";
+            exifHolder.innerHTML = encodedData;
+        }
+    },
+
+    getThumbnailCallback: function(imageURL){
+        if(imageURL != null) {
+            var thumbnailHolder = document.getElementById("thumbnail_holder");
+            thumbnailHolder.style.display = "block";
+            thumbnailHolder.src = imageURL;
+        }
+    }
+
+}
 
 ```
