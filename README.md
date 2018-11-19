@@ -23,6 +23,8 @@ In addition there is a sample image containing EXIF data called exif-example.jpg
 
 ## Code Example ##
 
+### HTML ###
+
 ``` HTML
 
 <!doctype html>
@@ -53,6 +55,7 @@ In addition there is a sample image containing EXIF data called exif-example.jpg
 </html>
 
 ```
+### CSS  ###
 
 ``` CSS
 
@@ -149,6 +152,7 @@ In addition there is a sample image containing EXIF data called exif-example.jpg
 }
 
 ```
+### Javascript  ###
 
 ``` Javascript
 
