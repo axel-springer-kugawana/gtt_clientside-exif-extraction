@@ -15,7 +15,7 @@ This is mainly used for extracting the geo location from an image if available.
 This data can then be uploaded with the image as separate parameters to be stored separatly and associated with the image.
 
 ## Cloning the project
-git clone 
+git clone git@github.com:axel-springer-kugawana/gtt_clientside-exif-extraction.git
 
 ## Use case
 Extract image geo location from realestate images to be stored as image meta data and expand the listings search fields to contain location in cases where location was not added manually to the listing.
