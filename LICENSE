@@ -1,10 +1,9 @@
-# Lisence
+#license
 
+MIT License
 
 Use of the EXIFImage.js class is licensed under:
-------------------------------------------------
-
-The MIT License (MIT)
+-------------------------------------------
 
 Copyright (c) 2018 Gur Zeevi
 
@@ -17,8 +16,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 Use of the EXIF.js class is licensed under:
 -------------------------------------------
-
-The MIT License (MIT)
 
 Copyright (c) 2008 Jacob Seidelin
 
