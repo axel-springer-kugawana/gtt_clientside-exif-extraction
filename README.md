@@ -21,8 +21,10 @@ Documentation for this project can be found in its Github wiki @ https://github.
 
 ## License
 EXIFImage.js The MIT License (MIT)  Copyright (c) 2018 Gur Zeevi
+
 Exif.js The MIT License (MIT) Copyright (c) 2008 Jacob Seidelin
 
 ## Author(s)
 EXIFImage.js Gur Zeevi gur.zeevi@axelspringer.com
+
 Exif.js Jacob Seidelin
