@@ -20,9 +20,7 @@ Documentation for this project can be found in its Github wiki @ https://github.
 ``` git clone git@github.com:axel-springer-kugawana/gtt_clientside-exif-extraction.git ```
 
 ## License
-EXIFImage.js The MIT License (MIT)  Copyright (c) 2018 Gur Zeevi
-
-Exif.js The MIT License (MIT) Copyright (c) 2008 Jacob Seidelin
+The MIT License (MIT)  Copyright (c) 2018 Axel Springer
 
 ## Author(s)
 EXIFImage.js Gur Zeevi gur.zeevi@axelspringer.com
