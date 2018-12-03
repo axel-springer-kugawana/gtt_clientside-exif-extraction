@@ -10,6 +10,10 @@
     </head>
 
     <body>
+    <div id="header">
+        <div id="header_logo"></div>
+        <div id="header_title">EXIF Data Extractor</div>
+    </div>
         <div id="file_select_button" onclick="document.getElementById('file_select').click();">
             Please choose a file
             <input id="file_select" type="file" style="position:absolute;opacity:0;width: 100%;height: 100%" title="Please choose a file" style="font-color:#ffffff;" onchange="Application.onFileSelected(this);">
