@@ -16,6 +16,9 @@ This data can then be uploaded with the image as separate parameters to be store
 ## Documentation
 Documentation for this project can be found in its Github wiki @ https://github.com/axel-springer-kugawana/gtt_clientside-exif-extraction/wiki
 
+## Confluence page
+The project confluence page can be found at: https://kugawana.atlassian.net/wiki/spaces/KUG/pages/32047105/ClientSide+EXIF+Image+Extraction+Library
+
 ## Cloning the project
 ``` git clone git@github.com:axel-springer-kugawana/gtt_clientside-exif-extraction.git ```
 
